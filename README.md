@@ -31,7 +31,7 @@ PR.plot_predictedPolyLine()
 
 ```
 x_pts, y_pts = generatePolyPoints(0, 50, 100, [5, 1, 1], 
-                                  noiseLevel = 2, plot = 0)
+                                  noiseLevel = 2, plot = 1)
 PR = PolynomialRegression(x_pts, y_pts)
 theta = PR.fit(method = 'gradient_descent',  order = 2, tol = 10**-3, numIters = 100, learningRate = 10**-4)
 PR.plot_predictedPolyLine()
@@ -39,7 +39,8 @@ PR.plotCost()
 ```
 <div>
 <ul>        
-<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/gradientDescent_polyFit.png"  height="350" width="400">
-<img style="float: right;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="350" width="400">
+<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/sample_data.png"  height="250" width="300">
+<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/gradientDescent_polyFit.png"  height="250" width="300">
+<img style="float: right;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="250" width="300">
  </ul>
 </div>
