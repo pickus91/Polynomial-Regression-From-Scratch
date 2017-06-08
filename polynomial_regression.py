@@ -13,12 +13,42 @@ from matplotlib import style
 style.use('ggplot')
 
 class PolynomialRegression(object):
+        """PolynomialRegression 
+        
+        Parameters
+        ------------
+        x_pts : 1-d numpy array, shape = [n_samples,]
+        y_pts : 1-d numpy array, shape = [n_samples,]
     
-    def __init__(self, x, y):
+        
+        Attributes
+        ------------
+        theta : 1-d numpy array, shape = [polynomial order + 1,] 
+            Ceofficients of fitted polynomial, with theta[0] corresponding
+            to the intercept term        
+        
+        method : str , values = 'normal_equation' | 'gradient_descent'
+            Method used for finding optimal values of theta
+        
+        If gradient descent method is chosen:
+        
+            costs : 1-d numpy array,
+                Cost function values for every iteration of gradient descent
+            
+            numIters: int
+                Number of iterations of gradient descent to be performed
+            
+        References
+        ------------
+        https://en.wikipedia.org/wiki/Polynomial_regression
+        """
+
+    def __init__(self, x, y):     
+        
         self.x = x
         self.y = y      
     
-    def standardize(data):
+    def standardize(self,data):
         """ Peform feature scaling
         Parameters:
         ------------
@@ -31,7 +61,7 @@ class PolynomialRegression(object):
 
         return (data - np.mean(data))/(np.max(data) - np.min(data))
         
-    def hypothesis(theta, x):
+    def hypothesis(self, theta, x):
         """ Compute hypothesis, h, where
         h(x) = theta_0*(x_1**0) + theta_1*(x_1**1) + ...+ theta_n*(x_1 ** n)
 
@@ -50,7 +80,7 @@ class PolynomialRegression(object):
             h += theta[i]*x ** i        
         return h        
         
-    def computeCost(x, y, theta):
+    def computeCost(self, x, y, theta):
         """ Compute value of cost function J 
         
         Parameters:
@@ -64,7 +94,7 @@ class PolynomialRegression(object):
         
         """    
         m = len(y)  
-        h = hypothesis(theta, x)
+        h = self.hypothesis(theta, x)
         errors = h-y
         
         return (1/(2*m))*np.sum(errors**2) 
@@ -112,7 +142,7 @@ class PolynomialRegression(object):
             d = {}
             d['x' + str(0)] = np.ones([1,len(x_pts)])[0]    
             for i in np.arange(1, order+1):                
-                d['x' + str(i)] = standardize(self.x ** (i))      
+                d['x' + str(i)] = self.standardize(self.x ** (i))      
                 
             d = OrderedDict(sorted(d.items(), key=lambda t: t[0]))
             X = np.column_stack(d.values())  
@@ -122,10 +152,10 @@ class PolynomialRegression(object):
             costs = []
             for i in range(numIters):
              
-                h = hypothesis(theta, self.x)       
+                h = self.hypothesis(theta, self.x)       
                 errors = h-self.y
                 theta += -learningRate * (1/m)*np.dot(errors, X)
-                cost = computeCost(self.x, self.y, theta)
+                cost = self.computeCost(self.x, self.y, theta)
                 costs.append(cost)         
                 #tolerance check
                 if cost < tol:
@@ -147,17 +177,16 @@ class PolynomialRegression(object):
         -----------       
         matploblib figure
         """        
-        
         plt.figure()
         plt.scatter(self.x, self.y, s = 30, c = 'b') 
         line = self.theta[0] #y-intercept 
         label_holder = []
         label_holder.append('%.*f' % (2, self.theta[0]))
         for i in np.arange(1, len(self.theta)):            
-            line += self.theta[i] * x_pts ** i 
+            line += self.theta[i] * self.x ** i 
             label_holder.append(' + ' +'%.*f' % (2, self.theta[i]) + r'$x^' + str(i) + '$') 
 
-        plt.plot(x_pts, line, label = ''.join(label_holder))        
+        plt.plot(self.x, line, label = ''.join(label_holder))        
         plt.title('Polynomial Fit: Order ' + str(len(self.theta)-1))
         plt.xlabel('x')
         plt.ylabel('y') 
@@ -181,20 +210,7 @@ class PolynomialRegression(object):
         else:
             print('plotCost method can only be called when using gradient descent method')
         
-#Testing...(use quadratic or something lol)
-x_pts, y_pts = generatePolyPoints(0, 50, 100, [0, 1,1,1], noiseLevel = 4, plot = 0)
-PR = PolynomialRegression(x_pts, y_pts)
 
-#Normal Equation Method
-#theta = PR.fit(method = 'normal_equation', order = 3)
-
-#Gradient Descent Method
-theta = PR.fit(method = 'gradient_descent',  order = 3, tol = 10**-3, numIters = 100, learningRate = 0.000001)
-        
-PR.plot_predictedPolyLine()
-PR.plotCost()
-        
-        
         
         
         
