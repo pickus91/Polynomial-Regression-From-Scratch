@@ -45,5 +45,5 @@ PR.plotCost()
 </div>
 
 <div>
-<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="350" width="400">
+<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="350" width="400">
 </div>
