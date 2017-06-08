@@ -20,11 +20,17 @@ x_pts, y_pts = generatePolyPoints(0, 50, 100, [5, 1, 1],
 <div align = "center">
 <img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/sample_data.png"  height="350" width="425">
 </div>
+
 ```
 PR = PolynomialRegression(x_pts, y_pts)
 theta = PR.fit(method = 'normal_equation', order = 2)
 PR.plot_predictedPolyLine()
 ```
+<div align = "center">
+21
+<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/normalEQ_polyFit.png"  height="350" width="425">
+22
+</div>
 
 
 ### Code Example 2: Gradient Descent Method
