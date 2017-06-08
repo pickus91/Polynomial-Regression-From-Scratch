@@ -39,8 +39,11 @@ PR.plotCost()
 ```
 <div>
 <ul>        
-<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/sample_data.png"  height="250" width="300">
-<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/gradientDescent_polyFit.png"  height="250" width="300">
-<img style="float: right;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="250" width="300">
+<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/sample_data.png"  height="350" width="400">
+<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/gradientDescent_polyFit.png"  height="350" width="400">
  </ul>
+</div>
+
+<div>
+<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="350" width="400">
 </div>
