@@ -1,5 +1,5 @@
-# Polynomial-Regression-From-Scratch
-Polynomial regression using normal equation and gradient descent methods.
+ # Polynomial-Regression-From-Scratch
+Polynomial regression using the normal equation and gradient descent methods.
 
 ## Dependencies
 * [NumPy](http://www.numpy.org/)
