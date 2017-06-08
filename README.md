@@ -11,6 +11,22 @@ This code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 ## Synopsis
 
+The goal of polynomial regression is to fit a *nth* degree polynomial to data to establish a general relationship between the independent variable *x* and dependent variable *y*. Polynomial regression is a special form of multiple linear regression, in which the objective is to minimize the cost function given by:
+<div>
+<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_function.PNG"  height="70" width="270">
+</div>
+
+and the hypothesis is given by the linear model:
+<div>
+<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/hypothesis.PNG"  height="165" width="465">
+</div>
+
+The ```PolynomialRegression``` class can perform polynomial regression using two different methods: the normal equation and gradient descent. The normal equation method uses the closed form solution to linear regression:
+<div>
+<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/normal_EQ.PNG"  height="110" width="190">
+</div>
+and does not require iterative computations or feature scaling. Gradient descent is an iterative approach that increments theta according to the direction of the gradient of the cost function.
+
 ### Code Example 1: Normal Equation Method
 
 ```
@@ -43,6 +59,7 @@ PR.plotCost()
 <img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/gradientDescent_polyFit.png"  height="350" width="400">
  </ul>
 </div>
+
 
 <div>
 <img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="350" width="400">
