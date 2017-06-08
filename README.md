@@ -11,7 +11,7 @@ This code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 ## Synopsis
 
-### Code Example: Normal Equation Method
+### Code Example 1: Normal Equation Method
 
 ```
 x_pts, y_pts = generatePolyPoints(0, 50, 100, [5, 1, 1], 
@@ -27,7 +27,7 @@ PR.plot_predictedPolyLine()
 ```
 
 
-### Code Example: Gradient Descent Method
+### Code Example 2: Gradient Descent Method
 
 ```
 PR = PolynomialRegression(x_pts, y_pts)
@@ -37,7 +37,7 @@ PR.plotCost()
 ```
 <div>
 <ul>        
-<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/gradientDescent_polyFit.png"  height="350" width="425">
-<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="350" width="425">
+<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/gradientDescent_polyFit.png"  height="350" width="400">
+<img style="float: right;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="350" width="400">
  </ul>
 </div>
