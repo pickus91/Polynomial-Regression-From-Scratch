@@ -13,7 +13,7 @@ This code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 The goal of polynomial regression is to fit a *nth* degree polynomial to data to establish a general relationship between the independent variable *x* and dependent variable *y*. Polynomial regression is a special form of multiple linear regression, in which the objective is to minimize the cost function given by:
 <div align = "center">
-<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_function.PNG"  height="70" width="270">
+<img style="float: center;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_function.PNG"  height="100" width="300">
 </div>
 
 and the hypothesis is given by the linear model:
