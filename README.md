@@ -11,6 +11,33 @@ This code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 ## Synopsis
 
-### Normal Equation Method
+### Code Example: Normal Equation Method
 
-### Gradient Descent Method
+```
+x_pts, y_pts = generatePolyPoints(0, 50, 100, [5, 1, 1], 
+                                  noiseLevel = 2, plot = 1)
+```
+<div align = "center">
+<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/sample_data.png"  height="350" width="425">
+</div>
+```
+PR = PolynomialRegression(x_pts, y_pts)
+theta = PR.fit(method = 'normal_equation', order = 2)
+PR.plot_predictedPolyLine()
+```
+
+
+### Code Example: Gradient Descent Method
+
+```
+PR = PolynomialRegression(x_pts, y_pts)
+theta = PR.fit(method = 'gradient_descent',  order = 2, tol = 10**-3, numIters = 100, learningRate = 10**-4)
+PR.plot_predictedPolyLine()
+PR.plotCost()
+```
+<div>
+<ul>        
+<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/gradientDescent_polyFit.png"  height="350" width="425">
+<img style="float: left;" src="https://github.com/pickus91/Polynomial-Regression-From-Scratch/blob/master/Figures/cost_vs_iterations.png"  height="350" width="425">
+ </ul>
+</div>
